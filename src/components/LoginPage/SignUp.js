@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 //import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   let headers = new Headers();
+  const navigate = useNavigate();
 
   headers.append("Content-Type", "application/json");
   headers.append("Accept", "application/json");
@@ -35,6 +37,10 @@ const SignUp = () => {
         .then((response) => response.json())
         .then((data) => {
           toast(data.message);
+          if (data.isAlready === false) {
+            console.log("issss");
+            navigate("/signin");
+          }
         })
         .catch((error) => {
           console.error("Error:", error);
