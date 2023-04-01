@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 //import { Link } from 'react-router-dom';
 
 const SignUp = () => {
@@ -33,8 +34,7 @@ const SignUp = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("Success:", data);
-        
+          toast(data.message);
         })
         .catch((error) => {
           console.error("Error:", error);
