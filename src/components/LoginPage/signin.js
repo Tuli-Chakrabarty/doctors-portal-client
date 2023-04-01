@@ -22,8 +22,8 @@ const SignIn = () => {
                 </div>
     
                 <div class="mb-3">
-                  <input type="text" class="form-control" id="Username" {... register("Username")} aria-describedby="emailHelp"
-                    placeholder="User Name"/>
+                  <input type="text" class="form-control" id="Username" {... register("email")} aria-describedby="emailHelp"
+                    placeholder="Email"/>
                 
                    
                 </div>
